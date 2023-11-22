@@ -5,6 +5,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
 }
 
 /* Prevent font size inflation */
@@ -38,6 +39,7 @@ ol[role='list'] {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  background-color: #f6f8fc;
 }
 
 /* Set shorter line heights on headings and interactive elements */
