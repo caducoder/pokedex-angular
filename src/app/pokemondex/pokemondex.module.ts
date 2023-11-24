@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { PokemondexRoutingModule } from './pokemondex-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     PokemondexRoutingModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ]
 })
 export class PokemondexModule { }

@@ -10,20 +10,27 @@
 <h1 class="title">Pokedex</h1>
 
 <ul class="pokemons">
-  <li class="pokemon">
-    <span class="number">#001</span>
-    <span class="name">bulbasaur</span>
+  <li class="pokemon" *ngFor="let poke of pokemons">
+    <span class="number">#{{poke.order.padStart(3,"0")}}</span>
+    <span class="name">{{poke.name}}</span>
     <div class="detail">
       <ol class="types">
-        <li>grass</li>
-        <li>poison</li>
+        <li *ngFor="let tp of poke.types">{{tp.type.name}}</li>
       </ol>
       <div>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-          alt="Pokemon">
+        <img src={{poke.front_default}} alt="Pokemon">
       </div>
-
     </div>
   </li>
+  <!-- <li *ngFor="let poke of pokemons">
+    <span>{{poke.name}}</span>
+  </li> -->
 
 </ul>
+
+<ng-template #loading>
+  <p>loading...</p>
+  <div class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

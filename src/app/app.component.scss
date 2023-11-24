@@ -1,5 +1,16 @@
 .content {
   padding: 15px;
+  position: relative;
+
+  .bg {
+    position: absolute;
+    top: -35%;
+    right: calc(-3vw - 100px);
+    z-index: -1;
+    width: 300px;
+    filter: invert(50%);
+    opacity: 0.1;
+  }
 }
 
 @media screen and (min-width: 768px) {
