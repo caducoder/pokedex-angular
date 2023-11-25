@@ -21,7 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class PokedexComponent implements OnInit {
   limit = 10;
-  offset = 380;
+  offset = 0;
   pokemons: BriefPokemon[];
 
   constructor(
