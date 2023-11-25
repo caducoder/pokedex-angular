@@ -20,7 +20,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   ],
 })
 export class PokedexComponent implements OnInit {
-
+  limit = 10;
+  offset = 380;
   pokemons: BriefPokemon[];
 
   constructor(
@@ -34,17 +35,17 @@ export class PokedexComponent implements OnInit {
     this.getPokemons()
   }
 
-  getPokemons() {
-    this.pokemonService.listPokemons()
+  getPokemons(limit = 10, offset = 0) {
+    this.pokemonService.listPokemons(limit, offset)
       .subscribe(response  => {
         let fullPokeList: BriefPokemon[] = []
         let tinyList = response?.results!
          tinyList.map(({url}) => {
           this.pokemonService.getPokeInfo(url)
             .subscribe(resp => {
-              let {order, name, types, sprites: {other: {dream_world: {front_default}}}} = resp
+              let {id, name, types, sprites: {other: {dream_world: {front_default}}}} = resp
               const poke = {
-                order: order.toString(),
+                order: id.toString(),
                 name,
                 color: types![0].type.name,
                 types,
@@ -53,8 +54,18 @@ export class PokedexComponent implements OnInit {
               fullPokeList.push(poke as BriefPokemon)
             })
         })
-        this.pokemons = fullPokeList
+        this.pokemons= fullPokeList
       })
+  }
+
+  nextPage() {
+    this.offset += 10
+    this.getPokemons(this.limit, this.offset)
+  }
+
+  previousPage(){
+    this.offset -= 10
+    this.getPokemons(this.limit, this.offset)
   }
 
   goBack(): void {

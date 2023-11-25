@@ -80,6 +80,58 @@
 
 .container {
   padding: 15px;
+
+  .pagination-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      cursor: pointer;
+      box-shadow: inset 0px 1px 0px 0px #fff6af;
+      background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+      background-color: #ffec64;
+      border-radius: 6px;
+      border: 1px solid #ffaa22;
+      display: inline-block;
+      color: #333333;
+      font-family: Arial;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 6px 24px;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #ffee66;
+      transition: all .2s ease-in-out;
+
+      &:disabled {
+        cursor: default;
+        background: gainsboro;
+        border: 1px solid #aaaaaa;
+
+        &:hover {
+          background: gainsboro;
+        }
+
+        &:active {
+          position: relative;
+          top: 0px;
+        }
+      }
+
+      &:hover {
+        background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+        background-color: #ffab23;
+        transition: all .2s ease-in-out;
+      }
+
+      &:active {
+        position: relative;
+        top: 1px;
+      }
+
+
+    }
+  }
 }
 
 .loading-spinner {
@@ -98,12 +150,12 @@
   grid-template-rows: auto auto;
   list-style: none;
   padding-left: 0;
+  gap: 1rem;
 
   .pokemon {
     display: flex;
     flex-direction: column;
     text-transform: capitalize;
-    margin: .5rem;
     padding: 1rem 1rem;
     color: #FFF;
     border-radius: 1rem;

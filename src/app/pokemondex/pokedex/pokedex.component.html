@@ -23,6 +23,12 @@
       </div>
     </li>
   </ul>
+  <div class="pagination-box">
+    <button [disabled]="offset == 0" (click)="previousPage()">
+      Previous page
+    </button>
+    <button [disabled]="offset >= 400" (click)="nextPage()">Next page</button>
+  </div>
 
   <ng-template #loading>
     <p>loading...</p>
