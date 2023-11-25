@@ -1,26 +1,30 @@
-<h1>What Pokemon are you looking for?</h1>
+<div class="top-container">
+  <h1>What Pokemon are you looking for?</h1>
 
-<div class="search-box">
-  <input type="text" class="search-input" placeholder="Search Pokemon, Move, Ability etc">
+  <div class="search-box">
+    <input type="text" class="search-input" placeholder="Search Pokemon, Move, Ability etc">
+  </div>
+
+  <div class="buttons">
+    <a mat-raised-button [routerLink]="'pokedex'" target="_self" class="button bg-green">
+      Pokedex
+    </a>
+    <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-red">
+      Moves
+    </a>
+    <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-blue">
+      Abilities
+    </a>
+    <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-yellow">
+      Items
+    </a>
+    <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-purple">
+      Locations
+    </a>
+    <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-brown">
+      Type Charts
+    </a>
+  </div>
 </div>
 
-<div class="buttons">
-  <a mat-raised-button [routerLink]="'pokedex'" target="_self" class="button bg-green">
-    Pokedex
-  </a>
-  <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-red">
-    Moves
-  </a>
-  <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-blue">
-    Abilities
-  </a>
-  <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-yellow">
-    Items
-  </a>
-  <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-purple">
-    Locations
-  </a>
-  <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-brown">
-    Type Charts
-  </a>
-</div>
+<h2>Pokémon News</h2>

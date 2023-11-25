@@ -21,6 +21,7 @@ export interface BriefPokemon {
   name: string;
   order: string;
   types?: (Types)[] | null;
+  color: string;
   front_default: string
 }
 export interface Pokemon { 

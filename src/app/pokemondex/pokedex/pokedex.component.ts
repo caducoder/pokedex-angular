@@ -3,8 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Location, NgFor, NgIf } from '@angular/common';
 import { PokemonService } from '../pokemon.service';
-import { Observable, tap } from 'rxjs';
-import { BriefPokemon, Pokemon, PokemonList, Results } from '../model/pokemon';
+import { BriefPokemon } from '../model/pokemon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
@@ -47,6 +46,7 @@ export class PokedexComponent implements OnInit {
               const poke = {
                 order: order.toString(),
                 name,
+                color: types![0].type.name,
                 types,
                 front_default
               }

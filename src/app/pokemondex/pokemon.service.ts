@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, first, tap, delay } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Pokemon, PokemonList } from './model/pokemon';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class PokemonService {
   constructor(private httpClient: HttpClient) { }
 
   listPokemons(): Observable<PokemonList> {
-    return this.httpClient.get<PokemonList>('https://pokeapi.co/api/v2/pokemon?limit=10&offset=0')
+    return this.httpClient.get<PokemonList>('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
   }
 
   getPokeInfo(url: string){
