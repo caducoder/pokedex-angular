@@ -6,7 +6,7 @@
   </div>
 
   <div class="buttons">
-    <a mat-raised-button [routerLink]="'pokedex'" target="_self" class="button bg-green">
+    <a mat-raised-button [routerLink]="'pokedex'" [queryParams]="{offset: 0}" target="_self" class="button bg-green">
       Pokedex
     </a>
     <a mat-raised-button disabled [routerLink]="'pokedex'" target="_self" class="button bg-red">

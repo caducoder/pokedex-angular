@@ -6,7 +6,8 @@ import { PokemonService } from '../pokemon.service';
 import { BriefPokemon } from '../model/pokemon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CacheService } from '../cache.service';
-import { Subscription } from 'rxjs';
+import { Subscription, map } from 'rxjs';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pokedex',
@@ -15,6 +16,7 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [
     MatButtonModule, 
+    RouterModule,
     MatIconModule, 
     MatProgressSpinnerModule, 
     NgFor,
@@ -29,6 +31,8 @@ export class PokedexComponent implements OnInit {
 
   constructor(
     private location: Location,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
     private pokemonService: PokemonService,
     private cacheService: CacheService
   ) {  
@@ -40,7 +44,17 @@ export class PokedexComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPokemons(0)
+    const offset$ = this.activatedRoute.queryParams.pipe(
+      map(x => x['offset'])
+    );
+
+    offset$.subscribe(offset => {
+      const offsetParam = +offset
+      const offsetC = isNaN(offsetParam) ? 0 : offsetParam
+      this.offset = offsetC
+      this.getPokemons(offsetC || 0);
+    });
+    //this.getPokemons(0)
   }
 
   getPokemons(offset = 0) {
@@ -78,15 +92,17 @@ export class PokedexComponent implements OnInit {
   nextPage() {
     this.offset += 10
     this.getPokemons(this.offset)
+    this.location.go(`pokedex?offset=${this.offset}`)
   }
 
   previousPage(){
     this.offset -= 10
     this.getPokemons(this.offset)
+    this.location.go(`pokedex?offset=${this.offset}`)
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['/']);
   }
 
   ngOnDestroy(): void {
