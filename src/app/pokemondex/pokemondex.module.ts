@@ -6,11 +6,13 @@ import { PokemondexRoutingModule } from './pokemondex-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     PokedexComponent,
-    HomeComponent
+    HomeComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,

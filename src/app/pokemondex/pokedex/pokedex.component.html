@@ -10,7 +10,7 @@
   <h1 class="title">Pokedex</h1>
 
   <ul class="pokemons">
-    <li class="pokemon {{poke.color}}" *ngFor="let poke of pokemons">
+    <li class="pokemon {{poke.color}}" *ngFor="let poke of pokemons" [routerLink]="['/pokedex', poke.name]">
       <span class="number">#{{poke.order.padStart(3,"0")}}</span>
       <span class="name">{{poke.name}}</span>
       <div class="detail">

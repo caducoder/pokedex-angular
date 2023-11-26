@@ -1,0 +1,38 @@
+<div class="{{pokemon.types![0].type.name}} container">
+  <nav class="nav-container">
+    <button mat-icon-button aria-label="Menu" (click)="goBack()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Favorite">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+  </nav>
+  <div class="poke-header">
+    <div>
+      <h1 class="name">{{pokemon.name}}</h1>
+      <ol class="types">
+        <li class="type" *ngFor="let tp of pokemon.types">
+          {{tp.type.name}}
+        </li>
+      </ol>
+    </div>
+    <p class="number">#{{pokemon.id.toString().padStart(3,"0")}}</p>
+  </div>
+  <div class="poke-img">
+    <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="{{pokemon.name}}">
+  </div>
+  <section class="details">
+    <mat-tab-group>
+      <mat-tab label="About" class="tab">
+        <p>Species</p>
+        <p>Height</p>
+        <p>Weight</p>
+        <p>Abilities</p>
+      </mat-tab>
+      <mat-tab label="Base Stats">Base Stats</mat-tab>
+      <mat-tab label="Evolution">Evolution</mat-tab>
+      <mat-tab label="Moves">Moves</mat-tab>
+    </mat-tab-group>
+
+  </section>
+</div>

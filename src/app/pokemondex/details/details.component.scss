@@ -1,0 +1,147 @@
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  color: #fff;
+}
+
+.poke-header {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .name {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+  }
+
+  .number {
+    font-size: 1.1rem;
+    font-weight: bolder;
+  }
+
+  .types {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    .type {
+      font-weight: 500;
+      width: fit-content;
+      border: none;
+      border-radius: 9999px;
+      padding: 3px 10px;
+      background: #ffffff50;
+      list-style: none;
+      margin: 0;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.poke-img {
+  display: flex;
+  justify-content: center;
+
+  img {
+    bottom: -25px;
+    position: relative;
+  }
+}
+
+.details {
+  background-color: #fff;
+  padding: 40px 10px 20px;
+  border-radius: 25px 25px 0 0;
+  color: #000;
+
+  .tab {
+    padding: 0;
+  }
+
+  &::ng-deep .mdc-tab {
+    min-width: 80px;
+    padding: 0;
+  }
+}
+
+.normal {
+  background-color: #A8A77A;
+}
+
+.fire {
+  background-color: #EE8130;
+}
+
+.water {
+  background-color: #6390F0;
+}
+
+.electric {
+  background-color: #F7D02C;
+}
+
+.grass {
+  background-color: #7AC74C;
+}
+
+.ice {
+  background-color: #96D9D6;
+}
+
+.fighting {
+  background-color: #C22E28;
+}
+
+.poison {
+  background-color: #A33EA1;
+}
+
+.ground {
+  background-color: #E2BF65;
+}
+
+.flying {
+  background-color: #A98FF3;
+}
+
+.psychic {
+  background-color: #F95587;
+}
+
+.bug {
+  background-color: #A6B91A;
+}
+
+.rock {
+  background-color: #B6A136;
+}
+
+.ghost {
+  background-color: #735797;
+}
+
+.dragon {
+  background-color: #6F35FC;
+}
+
+.dark {
+  background-color: #705746;
+}
+
+.steel {
+  background-color: #B7B7CE;
+}
+
+.fairy {
+  background-color: #D685AD;
+}
