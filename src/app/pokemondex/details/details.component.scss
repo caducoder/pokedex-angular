@@ -64,13 +64,40 @@
   border-radius: 25px 25px 0 0;
   color: #000;
 
-  .tab {
-    padding: 0;
-  }
-
   &::ng-deep .mdc-tab {
     min-width: 80px;
     padding: 0;
+  }
+
+  .text-gray {
+    color: #AAB3C7;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 15px 10px;
+    gap: 5px;
+
+    .ability {
+      text-transform: capitalize;
+    }
+  }
+
+  .base-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+    padding: 15px 10px;
+    gap: 5px;
+  }
+
+  .progress-bar {
+    display: flex;
+    align-items: center;
   }
 }
 

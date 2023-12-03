@@ -24,7 +24,15 @@ export interface BriefPokemon {
   color: string;
   front_default: string
 }
+export interface PokemonDetails extends Pokemon {
+  weightInKg: string
+  weightInLbs: string;
+  joinedAbilities: string;
+  heightInMeters: string;
+  total?: number;
+}
 export interface Pokemon { 
+  abilities: Abilities[];
   held_items?: any[] | null;
   id: number;
   is_default: boolean;
@@ -35,6 +43,7 @@ export interface Pokemon {
   sprites: Sprites;
   stats?: (Stats)[] | null;
   types?: (Types)[] | null;
+  height: number;
   weight: number;
 }
 export interface Forms { 

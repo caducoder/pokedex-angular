@@ -24,12 +24,68 @@
   <section class="details">
     <mat-tab-group>
       <mat-tab label="About" class="tab">
-        <p>Species</p>
-        <p>Height</p>
-        <p>Weight</p>
-        <p>Abilities</p>
+        <div class="about">
+          <span class="text-gray">Species</span>
+          <p>{{pokemon.species.name}}</p>
+          <span class="text-gray">Height</span>
+          <p>{{pokemon.heightInMeters}} m</p>
+          <span class="text-gray">Weight</span>
+          <p>{{pokemon.weightInLbs}} lbs ({{pokemon.weightInKg}} kg) </p>
+          <span class="text-gray">Abilities</span>
+          <p>
+            {{pokemon.joinedAbilities}}
+          </p>
+        </div>
       </mat-tab>
-      <mat-tab label="Base Stats">Base Stats</mat-tab>
+      <mat-tab label="Base Stats">
+        <div class="base-stats">
+          <span class="text-gray">HP</span>
+          <span class="text-center">{{pokemon.stats![0].base_stat}}</span>
+          <div class="progress-bar">
+            <mat-progress-bar mode="determinate" color="warn" value={{pokemon.stats![0].base_stat}}></mat-progress-bar>
+          </div>
+
+          <span class="text-gray">Attack</span>
+          <span class="text-center">{{pokemon.stats![1].base_stat}}</span>
+          <div class="progress-bar">
+            <mat-progress-bar mode="determinate" color="primary"
+              value={{pokemon.stats![1].base_stat}}></mat-progress-bar>
+          </div>
+
+          <span class="text-gray">Defense</span>
+          <span class="text-center">{{pokemon.stats![2].base_stat}}</span>
+          <div class="progress-bar">
+            <mat-progress-bar mode="determinate" color="warn" value={{pokemon.stats![2].base_stat}}
+              aria-valuemax=120></mat-progress-bar>
+          </div>
+
+          <span class="text-gray">Sp. Atk</span>
+          <span class="text-center">{{pokemon.stats![3].base_stat}}</span>
+          <div class="progress-bar">
+            <mat-progress-bar mode="determinate" value={{pokemon.stats![3].base_stat}}></mat-progress-bar>
+          </div>
+
+          <span class="text-gray">Sp. Def</span>
+          <span class="text-center">{{pokemon.stats![4].base_stat}}</span>
+          <div class="progress-bar">
+            <mat-progress-bar mode="determinate" color="warn" value={{pokemon.stats![4].base_stat}}></mat-progress-bar>
+          </div>
+
+          <span class="text-gray">Speed</span>
+          <span class="text-center">{{pokemon.stats![5].base_stat}}</span>
+          <div class="progress-bar">
+            <mat-progress-bar mode="determinate" value={{pokemon.stats![5].base_stat}}></mat-progress-bar>
+          </div>
+
+          <span class="text-gray">Total</span>
+          <span class="text-center">{{pokemon.total}}</span>
+          <div class="progress-bar">
+            <mat-progress-bar mode="determinate" color="warn" value={{pokemon.total}}
+              aria-valuemax="500"></mat-progress-bar>
+          </div>
+        </div>
+        <h3>Type Defenses</h3>
+      </mat-tab>
       <mat-tab label="Evolution">Evolution</mat-tab>
       <mat-tab label="Moves">Moves</mat-tab>
     </mat-tab-group>
